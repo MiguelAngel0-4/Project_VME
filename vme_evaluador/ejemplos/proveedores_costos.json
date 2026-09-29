@@ -1,0 +1,34 @@
+{
+  "criterio": "min",
+  "arbol": {
+    "tipo": "decision",
+    "nombre": "¿Qué proveedor de transporte contratar?",
+    "alternativas": [
+      {"nombre": "Proveedor A (tarifa fija)", "pago": 12000},
+      {
+        "nombre": "Proveedor B (tarifa variable)",
+        "nodo": {
+          "tipo": "azar",
+          "nombre": "Demanda",
+          "escenarios": [
+            {"nombre": "Alta", "probabilidad": 0.3, "pago": 18000},
+            {"nombre": "Media", "probabilidad": 0.5, "pago": 10000},
+            {"nombre": "Baja", "probabilidad": 0.2, "pago": 6000}
+          ]
+        }
+      },
+      {
+        "nombre": "Proveedor C (con contrato)",
+        "costo": 3000,
+        "nodo": {
+          "tipo": "azar",
+          "nombre": "Cumplimiento",
+          "escenarios": [
+            {"nombre": "Sin retrasos", "probabilidad": 0.6, "pago": 7000},
+            {"nombre": "Con retrasos", "probabilidad": 0.4, "pago": 14000}
+          ]
+        }
+      }
+    ]
+  }
+}

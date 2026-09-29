@@ -1,0 +1,32 @@
+{
+  "criterio": "max",
+  "arbol": {
+    "tipo": "decision",
+    "nombre": "¿Qué planta construir?",
+    "alternativas": [
+      {
+        "nombre": "Planta grande",
+        "nodo": {
+          "tipo": "azar",
+          "nombre": "Mercado",
+          "escenarios": [
+            {"nombre": "Favorable", "probabilidad": 0.5, "pago": 200000},
+            {"nombre": "Desfavorable", "probabilidad": 0.5, "pago": -180000}
+          ]
+        }
+      },
+      {
+        "nombre": "Planta pequeña",
+        "nodo": {
+          "tipo": "azar",
+          "nombre": "Mercado",
+          "escenarios": [
+            {"nombre": "Favorable", "probabilidad": 0.5, "pago": 100000},
+            {"nombre": "Desfavorable", "probabilidad": 0.5, "pago": -20000}
+          ]
+        }
+      },
+      {"nombre": "No hacer nada", "pago": 0}
+    ]
+  }
+}

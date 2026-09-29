@@ -1,0 +1,174 @@
+{
+  "criterio": "max",
+  "arbol": {
+    "tipo": "decision",
+    "nombre": "¿Realizar estudio de mercado?",
+    "alternativas": [
+      {
+        "nombre": "Realizar estudio",
+        "costo": 10000,
+        "nodo": {
+          "tipo": "azar",
+          "nombre": "Resultado del estudio",
+          "escenarios": [
+            {
+              "nombre": "Positivo",
+              "probabilidad": 0.45,
+              "nodo": {
+                "tipo": "decision",
+                "nombre": "Planta tras estudio positivo",
+                "alternativas": [
+                  {
+                    "nombre": "Planta grande",
+                    "nodo": {
+                      "tipo": "azar",
+                      "nombre": "Mercado",
+                      "escenarios": [
+                        {
+                          "nombre": "Favorable",
+                          "probabilidad": 0.78,
+                          "pago": 200000
+                        },
+                        {
+                          "nombre": "Desfavorable",
+                          "probabilidad": 0.22,
+                          "pago": -180000
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "nombre": "Planta pequeña",
+                    "nodo": {
+                      "tipo": "azar",
+                      "nombre": "Mercado",
+                      "escenarios": [
+                        {
+                          "nombre": "Favorable",
+                          "probabilidad": 0.78,
+                          "pago": 100000
+                        },
+                        {
+                          "nombre": "Desfavorable",
+                          "probabilidad": 0.22,
+                          "pago": -20000
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "nombre": "No hacer nada",
+                    "pago": 0
+                  }
+                ]
+              }
+            },
+            {
+              "nombre": "Negativo",
+              "probabilidad": 0.55,
+              "nodo": {
+                "tipo": "decision",
+                "nombre": "Planta tras estudio negativo",
+                "alternativas": [
+                  {
+                    "nombre": "Planta grande",
+                    "nodo": {
+                      "tipo": "azar",
+                      "nombre": "Mercado",
+                      "escenarios": [
+                        {
+                          "nombre": "Favorable",
+                          "probabilidad": 0.27,
+                          "pago": 200000
+                        },
+                        {
+                          "nombre": "Desfavorable",
+                          "probabilidad": 0.73,
+                          "pago": -180000
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "nombre": "Planta pequeña",
+                    "nodo": {
+                      "tipo": "azar",
+                      "nombre": "Mercado",
+                      "escenarios": [
+                        {
+                          "nombre": "Favorable",
+                          "probabilidad": 0.27,
+                          "pago": 100000
+                        },
+                        {
+                          "nombre": "Desfavorable",
+                          "probabilidad": 0.73,
+                          "pago": -20000
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "nombre": "No hacer nada",
+                    "pago": 0
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "nombre": "No realizar estudio",
+        "nodo": {
+          "tipo": "decision",
+          "nombre": "Planta sin estudio",
+          "alternativas": [
+            {
+              "nombre": "Planta grande",
+              "nodo": {
+                "tipo": "azar",
+                "nombre": "Mercado",
+                "escenarios": [
+                  {
+                    "nombre": "Favorable",
+                    "probabilidad": 0.5,
+                    "pago": 200000
+                  },
+                  {
+                    "nombre": "Desfavorable",
+                    "probabilidad": 0.5,
+                    "pago": -180000
+                  }
+                ]
+              }
+            },
+            {
+              "nombre": "Planta pequeña",
+              "nodo": {
+                "tipo": "azar",
+                "nombre": "Mercado",
+                "escenarios": [
+                  {
+                    "nombre": "Favorable",
+                    "probabilidad": 0.5,
+                    "pago": 100000
+                  },
+                  {
+                    "nombre": "Desfavorable",
+                    "probabilidad": 0.5,
+                    "pago": -20000
+                  }
+                ]
+              }
+            },
+            {
+              "nombre": "No hacer nada",
+              "pago": 0
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
